@@ -21,42 +21,7 @@ public class EmployeeInfo {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	private int employeeId;
-	private String name;
-	private String emplyoeeEmailId;
-	private String employeeBankDetails;
-	private int employeeSSN;
-
-
-
-	public String getName() {
-		return name;
-	}
-	public String setName(String name) {
-		this.name = name;
-		return name;
-	}
-
-
-	public String getEmployeeBankDetails() {
-		return employeeBankDetails;
-	}
-
-	public void setEmployeeBankDetails(String employeeBankDetails) {
-		this.employeeBankDetails = employeeBankDetails;
-		System.out.println("Employee Bank Details:" + employeeBankDetails);
-	}
-
-	public int getEmployeeSSN() {
-		return employeeSSN;
-	}
-
-	public void setEmployeeSSN(int employeeSSN) {
-		this.employeeSSN = employeeSSN;
-		System.out.println("Employee SSN N0:" + employeeSSN);
-	}
-
-
+	
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
@@ -67,76 +32,13 @@ public class EmployeeInfo {
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-
-	public EmployeeInfo() {}
 	public EmployeeInfo(int employeeId){
-		this.employeeId = employeeId;
+		
 	}
-
-	public void setEmployeeInfo1(int employeeId) {
-		this.employeeId = employeeId;
-		System.out.println(employeeId);
-
-	}
-
     public EmployeeInfo(String name, int employeeId){
-		this.name = name;
-		this.employeeId= employeeId;
+		
 	}
-	public void setEmployeeInfo2(String name,int employeeId) {
-		System.out.println(name + employeeId);
-
-	}
-	public void displayEmployeeInfo2() {
-		System.out.println("Name of the Employee:"+" " + "jacob" + " " + "EmployeeId:" +" " + 902);
-	}
-
-
-	public EmployeeInfo(String name, int employeeId, String employeeEmailId) {
-		this.name = name;
-		this.employeeId = employeeId;
-		this.emplyoeeEmailId = employeeEmailId;
-	}
-	public void setEmployeeInfo3(String name,int employeeId,String employeeEmailId) {
-		System.out.println(name + employeeId + employeeEmailId );
-
-	}
-
-
-	public void EmployeePantry() {
-		System.out.println("Employees can relax in the pantry");
-	}
-
-	public void assignDepartment() {
-		System.out.println("Software Architect");
-	}
-
-	public int calculateSalary() {
-		return 0;
-	}
-	public void benefitLayout() {
-		System.out.println("Employee Benifts include:Medical,life,disability isurance and retirement plans");
-	}
-
-	public int employeeId() {
-		return 0;
-	}
-
-	public String employeeName() {
-		return null;
-	}
-
-//nested
-
-	public static class nestedClassEmployee {
-
-
-		public static void nestedEmployeeName() {
-			System.out.println("Name");
-
-		}
-	}
-
+	
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
@@ -145,17 +47,8 @@ public class EmployeeInfo {
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static double calculateEmployeeBonus(int salary, int performance){
-
-		double total=0;
-		if(performance >=8) {
-
-			total = salary* .1;
-		}else {
-			total = salary*.08;
-		}
-
-		System.out.println("EmployeeBonus = $ " + total);
+	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
+		int total=0;
 		return total;
 	}
 	
@@ -165,8 +58,8 @@ public class EmployeeInfo {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static double calculateEmployeePension(int salary){
-		double total=0;
+	public static int calculateEmployeePension(){
+		int total=0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
 		String joiningDate = sc.nextLine();
@@ -178,22 +71,8 @@ public class EmployeeInfo {
         //implement numbers of year from above two dates
 		//Calculate pension
 
-		String startYear = convertedJoiningDate.substring(convertedJoiningDate.length()-4);
-		String currentYear = convertedTodaysDate.substring(convertedTodaysDate.length()-4);
-		int start = Integer.parseInt(startYear);
-		int current = Integer.parseInt(currentYear);
 
-		if((current-start)==1){
-			total = salary*.05;
 
-		}
-		else if((current-start)>=2) {
-			total = salary*.1;
-		}
-		else if((current-start)<=1) {
-			total=0;
-		}
-		System.out.println("Employee pension = $ " + total);
 		return total;
 	}
 	private static class DateConversion {
