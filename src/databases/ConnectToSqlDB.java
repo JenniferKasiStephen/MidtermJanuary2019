@@ -83,7 +83,7 @@ public class ConnectToSqlDB {
         return dataList;
     }
 
-    public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
+    public static void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
@@ -162,11 +162,11 @@ public class ConnectToSqlDB {
     }
 
 
-    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
+    public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2, String columnName3)
     {
         try {
             connectToSqlDatabase();
-                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + " ) VALUES(?,?)");
+                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + "," + columnName3 + " ) VALUES(?,?)");
                 ps.setString(1,"Ankita Sing");
                 ps.setInt(2,3590);
                 ps.executeUpdate();
