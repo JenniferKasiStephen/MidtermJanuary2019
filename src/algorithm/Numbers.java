@@ -61,7 +61,6 @@ public class Numbers {
 		printValue(numbers);
 		randomize (num, n);
 
-
 		//Bucket sort
 		algo.bucketSort(num);
 		long bucketSortExecutionTime = algo.executionTime;
@@ -77,6 +76,7 @@ public class Numbers {
 		ConnectToSqlDB.insertDataFromArrayToSqlTable(num, "quick_sort", "SortingNumbers");
 		printValue(numbers);
 		randomize (num, n);
+
 
 		//merge Sort
 		algo.MergeSort(num);
@@ -94,24 +94,29 @@ public class Numbers {
 		ConnectToSqlDB.insertDataFromArrayToSqlTable(num, "Shell_sort", "SortingNumbers");
 		printValue(numbers);
 		randomize (num, n);
-				//Come to conclusion about which Sorting Algo is better in given data set.
+
+
+
+
+		//Come to conclusion about which Sorting Algo is better in given data set.
 
 	}
 
-	     public static void storeRandomNumbers(int [] num){
-		  Random rand = new Random();
-		  for(int i=0; i<num.length; i++){
+	    public static void storeRandomNumbers(int [] num){
+		Random rand = new Random();
+		for(int i=0; i<num.length; i++){
 			num[i] = rand.nextInt(1000000);
 		}
 	}
-	     public static int findLow(int[] array){
-		 int low = array[0];
-		 for(int n: array){
+
+	    public static int findLow(int[] array){
+		int low = array[0];
+		for(int n: array){
 			if(array[n] < low){
 				low = array[n];
 			}
-		 }
-		 return low;
+		}
+		return low;
 	}
 	    public static int findHigh(int[] array){
 		int high = array[0];
@@ -123,7 +128,8 @@ public class Numbers {
 		return high;
 	}
 
-	    public static void randomize( int arr[], int n) {
+	    public static void randomize( int arr[], int n)
+	{
 		Random r = new Random();
 		// Start from the last element and swap one by one. We don't
 		// need to run for the first element that's why i > 0

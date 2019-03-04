@@ -40,7 +40,7 @@ public class UnitTestSorting {
 
 
         // quick sort
-       // sort.quickSort(unSortedArray);
+        // sort.quickSort(unSortedArray);
         try{
             Assert.assertEquals(sortedArray, unSortedArray, "Quick sort array is not sorted!");
         }catch (Exception ex){
@@ -80,10 +80,4 @@ public class UnitTestSorting {
         }
     }
 }
-
-
-
-
-
-
 

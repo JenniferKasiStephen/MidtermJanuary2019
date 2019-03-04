@@ -166,7 +166,7 @@ public class ConnectToSqlDB {
     {
         try {
             connectToSqlDatabase();
-                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + "," + columnName3 + " ) VALUES(?,?)");
+                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + ","+ columnName3+ " ) VALUES(?,?)");
                 ps.setString(1,"Ankita Sing");
                 ps.setInt(2,3590);
                 ps.executeUpdate();
