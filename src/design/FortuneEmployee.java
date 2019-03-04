@@ -1,5 +1,7 @@
 package design;
 
+import databases.ConnectToSqlDB;
+
 public class FortuneEmployee {
 
 	/**
@@ -14,9 +16,41 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
-		
+
+			EmployeeInfo info = new EmployeeInfo();
+			EmployeeInfo.nestedClassEmplyoee.nestedEmplyoeeName();
+			info.displayEmplyoeeInfo2();
+
+			EmployeeInfo emp2 = new EmployeeInfo();
+			emp2.setName("AMAZON");
+			System.out.println(emp2.getName());
+
+
+			info.assignDepartment();
+			info.setEmployeeBankDetails("Wells Fargo");
+			info.setEmployeeSSN(1234567);
+			info.EmplyoeeVaction();
+			info.EmplyoeePerformance();
+			info.benefitLayout();
+
+
+			ConnectToSqlDB Connection = new ConnectToSqlDB();
+			Connection.insertProfileToSqlTable("employees", "id", "name", "Dob");
+
+			EmployeeInfo.calculateEmployeeBonus(10000, 7);
+			EmployeeInfo.calculateEmployeePension(10000);
+
+
+		}
+
 
 
 	}
 
-}
+
+
+
+
+
+
+
